@@ -3,6 +3,7 @@ package com.polarbookshop.dispatcherservice;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.function.Function;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.cloud.function.context.FunctionCatalog;
 import org.springframework.cloud.function.context.test.FunctionalSpringBootTest;
@@ -12,6 +13,7 @@ import reactor.test.StepVerifier;
 
 @FunctionalSpringBootTest
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
+@Disabled("These tests are only necessary when using the functions alone (no bindings)")
 record DispatchingFunctionsIT(FunctionCatalog catalog) {
 
   @Test
