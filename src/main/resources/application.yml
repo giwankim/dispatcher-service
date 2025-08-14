@@ -7,8 +7,6 @@ spring:
   config:
     import: "optional:configserver:"
   cloud:
-    function:
-      definition: pack|label
     config:
       uri: http://localhost:8888
       request-connect-timeout: 5000
@@ -19,6 +17,15 @@ spring:
         initial-interval: 1000
         max-interval: 2000
         multiplier: 1.1
+    function:
+      definition: pack|label
+    stream:
+      bindings:
+        packlabel-in-0:
+          destination: order-accepted
+          group: ${spring.application.name}
+        packlabel-out-0:
+          destination: order-dispatched
   rabbitmq:
     host: localhost
     port: 5672
