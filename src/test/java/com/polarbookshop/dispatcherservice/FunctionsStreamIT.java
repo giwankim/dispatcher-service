@@ -30,8 +30,8 @@ record FunctionsStreamIT(
 
     input.send(inputMessage);
 
-    OrderDispatchedMessage outputMessage = objectMapper.readValue(
-        output.receive().getPayload(), OrderDispatchedMessage.class);
+    OrderDispatchedMessage outputMessage =
+        objectMapper.readValue(output.receive().getPayload(), OrderDispatchedMessage.class);
 
     assertThat(outputMessage).isEqualTo(expectedOutputMessage.getPayload());
   }
