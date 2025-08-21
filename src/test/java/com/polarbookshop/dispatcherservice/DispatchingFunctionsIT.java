@@ -43,7 +43,7 @@ record DispatchingFunctionsIT(FunctionCatalog catalog) {
 
     StepVerifier.create(packAndLabel.apply(new OrderAcceptedMessage(orderId)))
         .expectNextMatches(
-            dispatchedMessage -> dispatchedMessage.equals(new OrderDispatchedMessage(121L)))
+            dispatchedOrder -> dispatchedOrder.equals(new OrderDispatchedMessage(orderId)))
         .verifyComplete();
   }
 }
