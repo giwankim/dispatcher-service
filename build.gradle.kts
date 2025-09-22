@@ -1,9 +1,6 @@
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-    // java
-    java
-
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
     id("org.springframework.boot") version "3.5.6"
@@ -21,13 +18,6 @@ java {
     }
 }
 
-// java
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -39,13 +29,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.cloud:spring-cloud-function-context")
     implementation("org.springframework.cloud:spring-cloud-starter-config")
+    implementation("org.springframework.cloud:spring-cloud-stream")
+    implementation("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
     implementation("org.springframework.retry:spring-retry")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
-
-    // lombok
-    compileOnly("org.projectlombok:lombok")
-    annotationProcessor("org.projectlombok:lombok")
-
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
