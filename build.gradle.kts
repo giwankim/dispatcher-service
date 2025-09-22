@@ -46,7 +46,9 @@ dependencies {
 
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.springframework.cloud:spring-cloud-stream-test-binder")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 

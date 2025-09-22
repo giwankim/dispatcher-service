@@ -13,8 +13,8 @@ public class DispatchingFunctions {
   @Bean
   public Function<OrderAcceptedMessage, Long> pack() {
     return orderAcceptedMessage -> {
-      log.info("The order with id {} is packed.", orderAcceptedMessage.orderId());
-      return orderAcceptedMessage.orderId();
+      log.info("The order with id {} is packed.", orderAcceptedMessage.getOrderId());
+      return orderAcceptedMessage.getOrderId();
     };
   }
 

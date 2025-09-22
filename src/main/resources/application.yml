@@ -5,6 +5,9 @@ server:
 spring:
   application:
     name: dispatcher-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
+  # Config server
   config:
     import: "optional:configserver:"
   cloud:
