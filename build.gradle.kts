@@ -35,10 +35,12 @@ repositories {
 extra["springCloudVersion"] = "2025.0.0"
 
 dependencies {
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.cloud:spring-cloud-function-context")
     implementation("org.springframework.cloud:spring-cloud-starter-config")
     implementation("org.springframework.retry:spring-retry")
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
 
     // lombok
     compileOnly("org.projectlombok:lombok")
