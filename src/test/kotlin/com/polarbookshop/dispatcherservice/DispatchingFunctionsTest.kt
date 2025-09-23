@@ -2,6 +2,7 @@ package com.polarbookshop.dispatcherservice
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.springframework.cloud.function.context.FunctionCatalog
 import org.springframework.cloud.function.context.test.FunctionalSpringBootTest
@@ -10,6 +11,7 @@ import reactor.core.publisher.Flux
 import reactor.test.StepVerifier
 import java.util.function.Function
 
+@Disabled("These tests are only necessary when using the functions alone (no bindings)")
 @FunctionalSpringBootTest
 class DispatchingFunctionsTest(
     val catalog: FunctionCatalog,

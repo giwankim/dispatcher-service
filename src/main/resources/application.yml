@@ -31,6 +31,7 @@ spring:
           group: ${spring.application.name}
         packlabel-out-0:
           destination: order-dispatched
+  # RabbitMQ
   rabbitmq:
     host: localhost
     port: 5672
